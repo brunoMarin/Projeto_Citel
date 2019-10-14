@@ -4,7 +4,7 @@
 |	Autor: Bruno Marin Rodrigues					|
 |	Data: 11/10/2019								|
 |	Descrição: Script banco de dados				|
-|  													|
+|  	Banco de dados: MySQL							|
 =================================================  */
 
 /*CRIAR BANCO DE DADOS DBCitel*/
@@ -35,6 +35,8 @@ CREATE TABLE DBCitel.tblProduto
 
 
 /*		PROCEDURES		*/
+
+/*		INSERIR CATEGORIA		*/
 DELIMITER $$
 CREATE PROCEDURE dbcitel.uspInsertCategoria(in _DcCategoria VARCHAR(50))
 BEGIN
@@ -57,7 +59,7 @@ BEGIN
 END$$
 DELIMITER ;
 
-
+/*		SELECT CATEGORIA		*/
 CALL DELIMITER $$
 CREATE  PROCEDURE dbcitel.uspSelectCategoria()
 BEGIN
@@ -71,6 +73,7 @@ BEGIN
 END$$
 DELIMITER ;
 
+/*		ALTERAR CATEGORIA		*/
 DELIMITER $$
 CREATE PROCEDURE dbcitel.uspUpdateCategoria (in _IdCategoria INT, in _DcCategoria VARCHAR(50))
 BEGIN
@@ -87,6 +90,7 @@ BEGIN
 END$$
 DELIMITER ;
 
+/*		DELETAR CATEGORIA		*/
 DELIMITER $$
 CREATE PROCEDURE dbcitel.uspDeleteCategoria (in _IdCategoria INT)
 BEGIN
@@ -101,7 +105,7 @@ BEGIN
 END$$
 DELIMITER ;
 
-
+/*		INSERIR PRODUTO		*/
 DELIMITER $$
 CREATE PROCEDURE dbcitel.uspInsertProduto (in _IdCategoria INT, in _DcProduto varchar(50), in _VlrPreco decimal(10,2), in _DcCaracteristica varchar(200))
 BEGIN
@@ -135,7 +139,7 @@ BEGIN
 END$$
 DELIMITER ;
 
-
+/*		SELECT PRODUTO */
 DELIMITER $$
 CREATE PROCEDURE DBCitel.uspSelectProduto()
 BEGIN
@@ -155,6 +159,8 @@ BEGIN
 END $$
 DELIMITER ;]
 
+
+/*		ALTERAR PRODUTO		*/
 DELIMITER $$
 CREATE PROCEDURE dbcitel.uspUpdateProduto (in _IdProduto INT, in _IdCategoria INT, in _DcProduto varchar(50), in _VlrPreco decimal(10,2), in _DcCaracteristica varchar(200))
 BEGIN
@@ -174,6 +180,7 @@ BEGIN
 END$$
 DELIMITER ;
 
+/*		DELETAR PRODUTO		*/
 DELIMITER $$
 CREATE PROCEDURE dbcitel.uspDeleteProduto(in _IdProduto INT)
 BEGIN
@@ -188,6 +195,7 @@ BEGIN
 END$$
 DELIMITER ;
 
+/*		SELECIONAR PRODUTO	FILTRO	*/
 DELIMITER $$
 CREATE PROCEDURE dbcitel.uspSelectProdutoFiltro(in _IdCategoria INT)
 BEGIN
