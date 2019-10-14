@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Bruno Marin Rodrigues - bruno_marin_rodrigues@hotmail.com" />
+    <title>@ViewBag.Title | Prova técnica CITEL</title>
+
+    <!-- TEMA -->
+    <link href="~/Content/Tema/inspinia-master/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Tema/inspinia-master/css/style.min.css" rel="stylesheet" />
+    <link href="~/Content/Tema/inspinia-master/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/Tema/inspinia-master/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    
+    <link href="~/Content/Citel.css" rel="stylesheet" />
+
+    <!--PLUGIN TOAST-->
+    <link href="/content/CodeSeven-toastr-50092cc/build/toastr.min.css" rel="stylesheet">
+</head>
+
+<body class="">
+    <div id="wrapper">
+        <!--MENU LATERAL-->
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+
+                            <div class="circle">
+                                <img id="imgAvatarUsuario" height="100%" width="100%" alt="Avatar" src="https://www.citelsoftware.com.br/wp-content/uploads/2017/11/logo3_melhoropcao.png" />
+                            </div>
+
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear">
+                                    <span class="block m-t-xs"></span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="logo-element">
+                            Menu
+                        </div>
+                    </li>
+
+                    <!--HOME-->
+                    <li>
+                        <a href="~/Home/Index"><i class="fa fa-th-large"></i> <span class="nav-label">Home</span></a>
+                    </li>
+
+                    <!--CATEGORIA-->
+                    <li>
+                        <a href="~/Categoria/Categoria"><i class="fa fa-list-ul"></i> <span class="nav-label">Categoria</span></a>
+                    </li>
+
+                    <!--PRODUTO-->
+                    <li>
+                        <a href="~/Produto/Produto"><i class="fa fa-archive"></i> <span class="nav-label">Produto</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--FIM: MENU LATERAL-->
+
+        <div id="page-wrapper" class="gray-bg">
+
+            <!--MENU SUPERIOR-->
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                        <form role="search" class="navbar-form-custom" action="search_results.html">
+                            <div class="form-group">
+
+                            </div>
+                        </form>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <span class="m-r-sm text-muted welcome-message">Seja bem vindo ao projeto GERMINAR.</span>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!--FIM: MENU SUPERIOR-->
+
+            <!--CONTEÚDO-->
+            @RenderBody()
+
+            <div id="divPainelAguarde" class="container painel-aguarde">
+                <p class="painel-aguarde-imagem">
+                    <img src="@Url.Content("~/Content/Imagens/carregando.gif")" width="64" height="64">
+                </p>
+            </div>
+
+            <div class="footer">
+                <div class="pull-right">
+                </div>
+                <div>
+                     <strong>Bruno Marin Rodrigues </strong> &copy; @DateTime.Now.Year.ToString() &nbsp;
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--TEMMA-->
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+    <script src="/Content/Tema/inspinia-master/js/jquery-3.1.1.min.js"></script>
+    <script src="/Content/Tema/inspinia-master/js/jquery-3.1.1.min.js"></script>
+    <script src="/Content/Tema/inspinia-master/js/bootstrap.min.js"></script>
+    <script src="/Content/Tema/inspinia-master/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="/Content/Tema/inspinia-master/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+
+    <script src="/Content/Tema/inspinia-master/js/inspinia.js"></script>
+    <script src="/Content/Tema/inspinia-master/js/plugins/pace/pace.min.js"></script>
+    <script src="/Content/Tema/inspinia-master/js/plugins/typehead/bootstrap3-typeahead.min.js"></script>
+
+    <!--PLUGIN TOAST-->
+    <script src="~/Content/CodeSeven-toastr-50092cc/build/toastr.min.js"></script>
+
+    <!-- PÁGINAS -->
+    <script src="~/Scripts/App.js"></script>
+    <script src="/content/tema/inspinia-master/js/plugins/dataTables/datatables.min.js"></script>
+
+    @if (ViewBag.Title.ToString().Equals("Categoria"))
+    {
+        <script src="~/Scripts/Categoria.js"></script>
+
+    }
+    else if (ViewBag.Title.ToString().Equals("Produto"))
+    {
+        <script src="~/Scripts/Produto.js"></script>
+    }
+
+</body>
+</html>
