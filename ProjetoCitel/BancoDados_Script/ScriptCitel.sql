@@ -5,7 +5,21 @@
 |	Data: 11/10/2019								|
 |	Descrição: Script banco de dados				|
 |  	Banco de dados: MySQL							|
-=================================================  */
+====================================================|  
+|													|
+|				INSTRUÇÕES							|
+----------------------------------------------------|
+| 1) Executar o script abaixo para gerar o banco	|
+|	 de dados, as tabelas e as stored procedures.	|
+|													|
+| 2) Alterar a connection string nas duas classes:	|
+|	* CategorialModel								|
+|	* ProdutolModel									|
+|													|
+| 3) Dar "Clean" e depois Build no ProjetoCitel		|
+|													|
+====================================================*/
+
 
 /*CRIAR BANCO DE DADOS DBCitel*/
 CREATE DATABASE DBCitel;
